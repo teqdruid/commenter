@@ -194,9 +194,9 @@ function! s:addHeaderIfdef()
     exec "normal ggO" . "#ifndef " . l:macroName . "\<CR>#define " . l:macroName . "\n\<ESC>" . "Go" . "\n#endif // " . l:macroName
 endfunction
 
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python nnoremap <silent> <Leader>c :call <SID>CommentUncommentLine('n')<CR>
-autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python vnoremap <silent> <Leader>c :call <SID>CommentUncommentRange()<CR>
-autocmd BufNewFile,BufRead *.h nnoremap <silent> <Leader>ch :call <SID>addHeaderIfdef()<CR>
+autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python nnoremap <silent> <C-c> :call <SID>CommentUncommentLine('n')<CR>
+autocmd FileType c,cpp,java,sh,awk,vim,sed,perl,python vnoremap <silent> <C-c> :call <SID>CommentUncommentRange()<CR>
+autocmd BufNewFile,BufRead *.h nnoremap <silent> <C-c h> :call <SID>addHeaderIfdef()<CR>
 
 " -----------------------------------------------------------------
 " Following is copied from MakeDoxygenComment.vim
